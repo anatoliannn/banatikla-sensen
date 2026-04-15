@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0; padding: 0; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    background-color: #fdfdfd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+  }
+
+  /* GIF ve Yazı Konteynırı */
+  #celebration-container {
+    display: none; text-align: center; z-index: 10;
+  }
+
+  /* Senin Tenor GIF'in için kutu ayarı */
+  .gif-box {
+    width: 350px; margin: 0 auto 15px;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .glow-btn {
+    padding: 25px 50px; font-size: 28px; font-weight: bold; color: white;
+    
+    /* SENİN O DEVASE RENK LİSTEN - DOKUNULMADI */
+    background: linear-gradient(45deg, 
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff,
+      #ffb3b3, #ffffb3, #b3ffb3, #b3ffff, #b3b3ff, #ffb3ff, #ffb3b3);
+    
+    background-size: 10000% 10000%; 
+    border: none; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    animation: ultraSmoothFlow 40s linear infinite;
+    z-index: 99; transition: 0.3s;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  @keyframes ultraSmoothFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+
+  #message {
+    color: #ff85a2; font-size: 60px; font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.05); margin: 0;
+  }
+
+  #player { display: none; }
+</style>
+</head>
+<body>
+
+  <button id="btn" class="glow-btn">bana tıkla</button>
+
+  <div id="celebration-container">
+    <div class="gif-box">
+      <div class="tenor-gif-embed" data-postid="15291519990855066134" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+        <a href="https://tenor.com/view/cat-cat-meme-cat-bopping-head-cat-dancing-cat-bopping-gif-15291519990855066134">Cat Cat Meme Sticker</a>
+      </div>
+    </div>
+    <h1 id="message">Doğum Günün Kutlu Olsun Şenşen! 🥳</h1>
+  </div>
+
+  <div id="player"></div>
+
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const celebContainer = document.getElementById('celebration-container');
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '0', width: '0', videoId: 'ay13RRgYYpc',
+        playerVars: { 'autoplay': 0, 'controls': 0 }
+      });
+    }
+
+    btn.onclick = function() {
+      btn.style.display = 'none';
+      celebContainer.style.display = 'block';
+
+      if (player && player.playVideo) { player.playVideo(); }
+
+      const customColors = ['#ffb3b3', '#ffffb3', '#b3ffb3', '#b3ffff', '#b3b3ff', '#ffb3ff'];
+      (function frame() {
+        confetti({
+          particleCount: 6, angle: 60, spread: 55, origin: { x: 0, y: 0 }, colors: customColors
+        });
+        confetti({
+          particleCount: 6, angle: 120, spread: 55, origin: { x: 1, y: 0 }, colors: customColors
+        });
+        requestAnimationFrame(frame);
+      }());
+    };
+  </script>
+
+</body>
+</html>
